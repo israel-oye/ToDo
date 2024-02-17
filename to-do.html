@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Application</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/cyborg/bootstrap.min.css">
+</head>
+
+<body class="">
+    <div class="container-fluid col-lg-6 col-md-8 mx-auto p-3 mt-lg-5 mt-3 shadow-sm">
+        <h3 class="text-center text-decoration-underline text-warning">ToDo Application</h3>
+        <input type="text" id="todoName" class="form-control form-control-sm my-3 w-100 shadow-none" placeholder="Enter Todo">
+        <input type="text" id="todoDetail" class="form-control form-control-sm my-3 w-100 shadow-none" placeholder="Enter Todo description">
+        <button class="btn btn-sm btn-warning text-center" onclick="submitTodo()">Submit</button>
+        <button class="btn btn-sm btn-danger text-center" onclick="deleteTodo()">Delete</button>
+    </div>
+
+    <div id="showTodo" class="text-info my-4 container-fluid mx-auto p-3 shadow"></div>
+    <script src="todo-script.js"></script>
+</body>
+
+</html>
