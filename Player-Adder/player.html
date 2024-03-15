@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lineup Creator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/minty/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/868c606ea8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar bg-primary py-3">
+        <div class="container-fluid">
+            <div class="mx-auto">
+                <a class="navbar-brand" href="#">
+                    PitchSide <i class="fa-solid fa-futbol fa-bounce"
+                        style="--fa-bounce-rebound: 1x; --fa-animation-duration: 3s;"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container m-4">
+        <div class="mb-3">
+            <label for="player-name" class="form-label">Player Name  <i class="fa-solid fa-file-pen"></i></label>
+            <input type="text" class="form-control border-primary w-50" name="" id="player-name" placeholder="e.g. Messi">
+        </div>
+        <div class="mb-3">
+            <label for="player-num" class="form-label">Player Number  <i class="fa-solid fa-shirt"></i></label>
+            <input type="number" class="form-control border-primary w-50" name="player-num" id="player-num" min="1" max="99" placeholder="Shirt Number">
+        </div>
+        <div class="mb-3">
+            <label for="player-pos" class="form-label">Player Position  <i class="fa-solid fa-users"></i></label>
+            <select id="player-pos" class="form-select form-select-sm border-primary w-50" aria-label="Player position select">
+                <option selected>Select Position</option>
+                <option value="GK">Goalkeeper</option>
+                <option value="DF">Defender</option>
+                <option value="MF">Midfielder</option>
+                <option value="FW">Forward</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="player-nat" class="form-label">Nationality  <i class="fa-solid fa-globe"></i></label>
+            <select id="player-nat" class="form-select form-select-sm border-primary my-1 w-50" aria-label="Player nationality select">
+            </select>
+        </div>
+        
+        <button id="save-btn" onclick="savePlayer()" class="btn btn-lg btn-primary my-1 w-50" type="button">
+            Save Player
+        </button>
+    </main>
+    <div id="display-players">
+    </div>
+    <div class="container m-4">
+        <img class="img-fluid" src="football-pitch.webp" alt="Football Pitch">
+    </div>
+    
+    <script src="player.js"></script>
+</body>
+
+</html>
