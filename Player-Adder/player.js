@@ -34,10 +34,7 @@ class Player {
             <span class="fs-5">${this.jerseyNumber} </span>
             ${this.name}
             </h6>
-            <span class="fs-6"> ${this.nationality} || <img src="${await this
-      .playersFlag}" width="25" height="15" alt="${
-      this.nationality
-    }'s flag"> </span>
+            <span class="fs-6"> ${this.nationality} || <img src="${await this.playersFlag}" width="25" height="15" alt="${this.nationality}'s flag"> </span>
         </div>
     `;
   }
@@ -54,25 +51,26 @@ const savePlayer = () => {
   let playerPosition = document.getElementById("player-pos").value;
   let playerNationalityCode = document.getElementById("player-nat").value;
 
-  fetch(`https://restcountries.com/v3.1/alpha/${playerNationalityCode}`).then(
-    (response) => {
-      let data = response.json();
-      data.then((countryDetails) => {
-        let country = countryDetails[0];
-        let playerNationality = country.name.common;
+  fetch(`https://restcountries.com/v3.1/alpha/${playerNationalityCode}`)
+    .then(
+      (response) => {
+        let data = response.json();
+        data.then((countryDetails) => {
+          let country = countryDetails[0];
+          let playerNationality = country.name.common;
 
-        let player = new Player(
-          playerName,
-          playerNumber,
-          playerPosition,
-          playerNationality
-        );
+          let player = new Player(
+            playerName,
+            playerNumber,
+            playerPosition,
+            playerNationality
+          );
 
-        console.log(player);
-        player.display();
-      });
-    }
-  );
+          console.log(player);
+          player.display();
+        });
+      }
+    );
 
   document.getElementById("player-name").value = "";
   document.getElementById("player-num").value = "";
